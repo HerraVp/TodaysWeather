@@ -10,7 +10,7 @@ body {
     align-items: center;
     display: flex;
     height: 100vh;
-    background: #b9d5ff;
+    background-color: #2e2e2e;
     background-image: url("https://source.unsplash.com/1600x900/?landscape");
     background-repeat: no-repeat;
     background-size: cover;
