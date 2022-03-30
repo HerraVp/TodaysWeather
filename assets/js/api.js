@@ -67,4 +67,29 @@ m = n.getMonth() + 1;
 d = n.getDate();
 document.getElementById("date").innerHTML = "Current date: " + d + "/" + m + "/" + y;
 
-weather.fetchWeather("Helsinki");
+// Get visitors current city
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        fetch( // Fetch the city name from the API
+            "https://api.openweathermap.org/data/2.5/weather?lat=" +
+            position.coords.latitude +
+            "&lon=" +
+            position.coords.longitude +
+            "&units=metric&appid=" +
+            weather.apiKey
+        )
+            .then((response) => {
+                if (!response.ok) {
+                    alert("Error! No weather found.");
+                    throw new Error("Error! No weather found.");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const { name } = data; 
+                weather.fetchWeather(name);
+            });
+    });
+} else {
+    alert("Geolocation is not supported by this browser.");
+}
