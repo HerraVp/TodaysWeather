@@ -91,5 +91,6 @@ if (navigator.geolocation) {
             });
     });
 } else {
-    alert("Geolocation is not supported by this browser.");
+    alert("Geolocation is not supported by this browser. Fetching weather from default location.");
+    weather.fetchWeather("London");
 }
