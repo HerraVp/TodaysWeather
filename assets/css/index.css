@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Consolas, monospace;
+    font-family: 'Lexend', monospace;
     scroll-behavior: smooth;
 }
 
@@ -17,7 +17,6 @@ body {
 }
 
 .logo {
-    padding-top: 10px;
     color: #ffffff;
 }
 
@@ -38,7 +37,7 @@ body {
     color: #ffffff;
     padding: 2em;
     border-radius: 10px;
-    height: 300px;
+    height: auto;
     max-height: 350px;
     width: 100%;
     max-width: 420px;
@@ -128,4 +127,14 @@ h1.temp {
     color: #ffffff;
     background: #222222e1;
     background-color: none;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer a:hover {
+    color: #b9d5ff;
+    transition: 0.5s;
 }
